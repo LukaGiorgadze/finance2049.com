@@ -15,19 +15,17 @@ const darkSectionIds = ["features", "pricing", "footer"];
 const githubRepo = {
   owner: "LukaGiorgadze",
   name: "finance2049",
-  url: "https://github.com/LukaGiorgadze/finance2049",
+  url: "https://github.com/LukaGiorgadze/finance2049.com",
 };
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [overDarkSection, setOverDarkSection] = useState(false);
   const { theme, toggle } = useTheme();
+  const overDarkSectionEffective = theme === "dark" ? false : overDarkSection;
 
   useEffect(() => {
-    if (theme === "dark") {
-      setOverDarkSection(false);
-      return;
-    }
+    if (theme === "dark") return;
 
     const updateContrast = () => {
       const nav = document.querySelector("nav");
@@ -69,7 +67,7 @@ const Navbar = () => {
   return (
     <nav
       className="group/nav fixed left-0 right-0 top-0 z-50 px-4 pt-4 sm:px-6"
-      data-contrast={overDarkSection ? "light" : "default"}
+      data-contrast={overDarkSectionEffective ? "light" : "default"}
     >
       <div
         className="relative mx-auto flex h-16 w-full max-w-6xl items-center justify-between overflow-hidden rounded-[1.65rem] border border-white/50 px-4 shadow-[0_20px_60px_-34px_rgba(15,23,42,0.32),inset_0_1px_0_rgba(255,255,255,0.75)] backdrop-blur-[24px] transition-colors duration-200 before:pointer-events-none before:absolute before:inset-0 before:rounded-[1.65rem] before:bg-[linear-gradient(180deg,rgba(255,255,255,0.3),rgba(255,255,255,0.08)_45%,rgba(255,255,255,0.02))] before:opacity-100 after:pointer-events-none after:absolute after:inset-px after:rounded-[calc(1.65rem-1px)] after:border after:border-white/10 dark:border-white/20 dark:bg-black/20 dark:shadow-[0_26px_70px_-36px_rgba(0,0,0,0.78),inset_0_1px_0_rgba(255,255,255,0.08)] dark:before:bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.03)_45%,rgba(255,255,255,0.01))] dark:after:border-white/5 sm:px-5"
@@ -87,10 +85,10 @@ const Navbar = () => {
             <img src={logoWhite} alt="" className="h-full w-full object-contain" />
           </span>
           <span className="flex flex-col items-start leading-none">
-            <span className={cn("text-base font-semibold tracking-tight text-foreground transition-colors duration-200", overDarkSection && "text-white")}>
+            <span className={cn("text-base font-semibold tracking-tight text-foreground transition-colors duration-200", overDarkSectionEffective && "text-white")}>
               Finance 2049
             </span>
-            <span className={cn("text-xs font-medium tracking-tight text-foreground/80 transition-colors duration-200", overDarkSection && "text-white/80")}>
+            <span className={cn("text-xs font-medium tracking-tight text-foreground/80 transition-colors duration-200", overDarkSectionEffective && "text-white/80")}>
               Simple portfolio tracking
             </span>
           </span>
@@ -104,7 +102,7 @@ const Navbar = () => {
               href={link.href}
               className={cn(
                 "rounded-full px-4 py-2 text-sm font-medium text-foreground/72 outline-none transition-colors duration-200 hover:text-foreground hover:bg-white/30 focus-visible:ring-2 focus-visible:ring-primary/30 dark:text-white/70 dark:hover:text-white dark:hover:bg-white/10",
-                overDarkSection && "!text-white hover:!text-white hover:!bg-white/10",
+                overDarkSectionEffective && "text-white! hover:text-white! hover:bg-white/10!",
               )}
             >
               {link.label}
@@ -117,7 +115,7 @@ const Navbar = () => {
             onClick={toggle}
             className={cn(
               "inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-muted-foreground outline-none transition-colors duration-200 hover:bg-white/16 hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary/30 dark:border-white/10 dark:bg-white/[0.04] dark:hover:bg-white/[0.08] dark:hover:text-white",
-              overDarkSection && "text-white hover:text-white",
+              overDarkSectionEffective && "text-white hover:text-white",
             )}
             aria-label="Toggle theme"
           >
@@ -141,7 +139,7 @@ const Navbar = () => {
             onClick={toggle}
             className={cn(
               "inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-muted-foreground outline-none transition-colors duration-200 hover:bg-white/16 hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary/30 dark:border-white/10 dark:bg-white/[0.04] dark:hover:bg-white/[0.08] dark:hover:text-white",
-              overDarkSection && "!text-white/70 hover:!text-white",
+              overDarkSectionEffective && "text-white/70! hover:text-white!",
             )}
             aria-label="Toggle theme"
           >
@@ -150,7 +148,7 @@ const Navbar = () => {
           <button
             className={cn(
               "inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-foreground outline-none transition-colors duration-200 hover:bg-white/16 focus-visible:ring-2 focus-visible:ring-primary/30 dark:border-white/10 dark:bg-white/[0.04] dark:hover:bg-white/[0.08]",
-              overDarkSection && "!text-white/70 hover:!text-white",
+              overDarkSectionEffective && "text-white/70! hover:text-white!",
             )}
             onClick={() => setOpen(!open)}
             aria-label={open ? "Close menu" : "Open menu"}
@@ -163,7 +161,7 @@ const Navbar = () => {
       {open && (
         <div className="mx-auto mt-3 w-full max-w-6xl px-1 md:hidden">
           <div
-            className="relative overflow-hidden rounded-[1.5rem] border border-white/50 p-3 shadow-[0_24px_70px_-36px_rgba(15,23,42,0.34),inset_0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-[24px] before:pointer-events-none before:absolute before:inset-0 before:rounded-[1.5rem] before:bg-[linear-gradient(180deg,rgba(255,255,255,0.2),rgba(255,255,255,0.04))] dark:border-white/15 dark:bg-black/20 dark:shadow-[0_24px_70px_-36px_rgba(0,0,0,0.78),inset_0_1px_0_rgba(255,255,255,0.08)] dark:before:bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.01))]"
+            className="relative overflow-hidden rounded-3xl border border-white/50 p-3 shadow-[0_24px_70px_-36px_rgba(15,23,42,0.34),inset_0_1px_0_rgba(255,255,255,0.7)] backdrop-blur-[24px] before:pointer-events-none before:absolute before:inset-0 before:rounded-[1.5rem] before:bg-[linear-gradient(180deg,rgba(255,255,255,0.2),rgba(255,255,255,0.04))] dark:border-white/15 dark:bg-black/20 dark:shadow-[0_24px_70px_-36px_rgba(0,0,0,0.78),inset_0_1px_0_rgba(255,255,255,0.08)] dark:before:bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.01))]"
             style={{
               WebkitBackdropFilter: "blur(24px) saturate(165%)",
               backdropFilter: "blur(24px) saturate(165%)",
@@ -177,7 +175,7 @@ const Navbar = () => {
                   href={link.href}
                   className={cn(
                     "block w-full rounded-2xl px-4 py-3 text-left text-sm font-medium text-foreground/78 outline-none transition-colors duration-200 hover:bg-white/10 hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary/30 dark:text-white/75 dark:hover:bg-white/[0.05] dark:hover:text-white",
-                    overDarkSection && "!text-white/70 hover:!text-white",
+                    overDarkSectionEffective && "text-white/70! hover:text-white!",
                   )}
                 >
                   {link.label}

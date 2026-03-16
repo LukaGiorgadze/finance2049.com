@@ -11,7 +11,7 @@ const navLinks = [
 ];
 
 const communityLinks = [
-  { label: "GitHub", href: "https://github.com/LukaGiorgadze/finance2049" },
+  { label: "GitHub", href: "https://github.com/LukaGiorgadze/finance2049.com" },
   { label: "Discord", href: "https://discord.gg/XdXRAHUKMh" },
 ];
 
