@@ -66,6 +66,15 @@ const Navbar = () => {
     setOpen(false);
   };
 
+  const handleHomeClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    setOpen(false);
+
+    if (!isHomePage) return;
+
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
 
   return (
     <nav
@@ -81,7 +90,7 @@ const Navbar = () => {
       >
         <Link
           to="/"
-          onClick={() => setOpen(false)}
+          onClick={handleHomeClick}
           className="relative z-10 inline-flex items-center gap-3 rounded-full outline-none transition-opacity duration-200 hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="Go to top"
         >
