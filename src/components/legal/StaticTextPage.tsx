@@ -19,7 +19,7 @@ const StaticTextPage = ({ title, description, meta, sections }: StaticTextPagePr
     <Navbar />
 
     <main className="relative overflow-hidden">
-      <div className="absolute inset-x-0 top-0 h-72 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.12),transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-x-0 top-0 h-72 bg-[radial-gradient(circle_at_top,rgba(20,20,20,0.2),transparent_30%)] dark:bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.2),transparent_60%)] pointer-events-none" />
 
       <div className="container relative py-20 md:py-28">
         <div className="mx-auto max-w-4xl">
