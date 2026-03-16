@@ -15,7 +15,7 @@ const darkSectionIds = ["features", "pricing", "footer"];
 const githubRepo = {
   owner: "LukaGiorgadze",
   name: "finance2049",
-  url: "https://github.com/LukaGiorgadze/finance2049.com",
+  url: "https://github.com/LukaGiorgadze/finance2049",
 };
 
 const Navbar = () => {
