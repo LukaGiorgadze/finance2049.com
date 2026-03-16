@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { useTheme } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
 import logoWhite from "/logo-white.png";
@@ -15,13 +16,15 @@ const darkSectionIds = ["features", "pricing", "footer"];
 const githubRepo = {
   owner: "LukaGiorgadze",
   name: "finance2049",
-  url: "https://github.com/LukaGiorgadze/finance2049.com",
+  url: "https://github.com/LukaGiorgadze/finance2049",
 };
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [overDarkSection, setOverDarkSection] = useState(false);
   const { theme, toggle } = useTheme();
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
   const overDarkSectionEffective = theme === "dark" ? false : overDarkSection;
 
   useEffect(() => {
@@ -76,8 +79,9 @@ const Navbar = () => {
           backdropFilter: "blur(24px) saturate(165%)",
         }}
       >
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        <Link
+          to="/"
+          onClick={() => setOpen(false)}
           className="relative z-10 inline-flex items-center gap-3 rounded-full outline-none transition-opacity duration-200 hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="Go to top"
         >
@@ -92,21 +96,35 @@ const Navbar = () => {
               Simple portfolio tracking
             </span>
           </span>
-        </button>
+        </Link>
 
         <div className="relative z-10 hidden items-center gap-2 md:flex">
           {navLinks.map((link) => (
-            <a
-              key={link.id}
-              onClick={(e) => scrollTo(e, link.id)}
-              href={link.href}
-              className={cn(
-                "rounded-full px-4 py-2 text-sm font-medium text-foreground/72 outline-none transition-colors duration-200 hover:text-foreground hover:bg-white/30 focus-visible:ring-2 focus-visible:ring-primary/30 dark:text-white/70 dark:hover:text-white dark:hover:bg-white/10",
-                overDarkSectionEffective && "text-white! hover:text-white! hover:bg-white/10!",
-              )}
-            >
-              {link.label}
-            </a>
+            isHomePage ? (
+              <a
+                key={link.id}
+                onClick={(e) => scrollTo(e, link.id)}
+                href={link.href}
+                className={cn(
+                  "rounded-full px-4 py-2 text-sm font-medium text-foreground/72 outline-none transition-colors duration-200 hover:text-foreground hover:bg-white/30 focus-visible:ring-2 focus-visible:ring-primary/30 dark:text-white/70 dark:hover:text-white dark:hover:bg-white/10",
+                  overDarkSectionEffective && "text-white! hover:text-white! hover:bg-white/10!",
+                )}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.id}
+                to={`/${link.href}`}
+                onClick={() => setOpen(false)}
+                className={cn(
+                  "rounded-full px-4 py-2 text-sm font-medium text-foreground/72 outline-none transition-colors duration-200 hover:text-foreground hover:bg-white/30 focus-visible:ring-2 focus-visible:ring-primary/30 dark:text-white/70 dark:hover:text-white dark:hover:bg-white/10",
+                  overDarkSectionEffective && "text-white! hover:text-white! hover:bg-white/10!",
+                )}
+              >
+                {link.label}
+              </Link>
+            )
           ))}
         </div>
 
@@ -169,17 +187,31 @@ const Navbar = () => {
           >
             <div className="space-y-1">
               {navLinks.map((link) => (
-                <a
-                  key={link.id}
-                  onClick={(e) => scrollTo(e, link.id)}
-                  href={link.href}
-                  className={cn(
-                    "block w-full rounded-2xl px-4 py-3 text-left text-sm font-medium text-foreground/78 outline-none transition-colors duration-200 hover:bg-white/10 hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary/30 dark:text-white/75 dark:hover:bg-white/[0.05] dark:hover:text-white",
-                    overDarkSectionEffective && "text-white/70! hover:text-white!",
-                  )}
-                >
-                  {link.label}
-                </a>
+                isHomePage ? (
+                  <a
+                    key={link.id}
+                    onClick={(e) => scrollTo(e, link.id)}
+                    href={link.href}
+                    className={cn(
+                      "block w-full rounded-2xl px-4 py-3 text-left text-sm font-medium text-foreground/78 outline-none transition-colors duration-200 hover:bg-white/10 hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary/30 dark:text-white/75 dark:hover:bg-white/[0.05] dark:hover:text-white",
+                      overDarkSectionEffective && "text-white/70! hover:text-white!",
+                    )}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.id}
+                    to={`/${link.href}`}
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      "block w-full rounded-2xl px-4 py-3 text-left text-sm font-medium text-foreground/78 outline-none transition-colors duration-200 hover:bg-white/10 hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary/30 dark:text-white/75 dark:hover:bg-white/[0.05] dark:hover:text-white",
+                      overDarkSectionEffective && "text-white/70! hover:text-white!",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                )
               ))}
             </div>
           </div>
