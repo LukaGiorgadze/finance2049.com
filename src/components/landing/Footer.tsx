@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import appStore from "/appstore.svg";
 import logo from "/logo-white.png";
 import playStore from "/playstore.svg";
@@ -28,7 +28,7 @@ const communityLinks = [
 ];
 
 const infoLinks = [
-  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Terms of Use", href: "/terms-and-conditions" },
   { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
@@ -43,6 +43,8 @@ const socialLinks = [
 
 const Footer = () => {
   const [isSupportOpen, setIsSupportOpen] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   return (
     <>
@@ -96,12 +98,21 @@ const Footer = () => {
               <ul className="mt-6 space-y-4">
                 {navLinks.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="cursor-pointer text-base text-white/60 transition-all duration-200 hover:text-white hover:opacity-80"
-                    >
-                      {link.label}
-                    </a>
+                    {isHomePage ? (
+                      <a
+                        href={link.href}
+                        className="cursor-pointer text-base text-white/60 transition-all duration-200 hover:text-white hover:opacity-80"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={`/${link.href}`}
+                        className="cursor-pointer text-base text-white/60 transition-all duration-200 hover:text-white hover:opacity-80"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -178,7 +189,7 @@ const Footer = () => {
                 Privacy
               </Link>
               <Link to="/terms-and-conditions" className="transition-colors hover:text-white/70">
-                Terms
+                Terms of Use
               </Link>
             </div>
           </div>

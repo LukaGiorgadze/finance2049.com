@@ -3,16 +3,18 @@ import Navbar from "@/components/landing/Navbar";
 
 type StaticTextSection = {
   heading: string;
-  body: string[];
+  body?: string[];
+  list?: string[];
 };
 
 type StaticTextPageProps = {
   title: string;
-  description: string;
+  description: string | string[];
+  meta?: string[];
   sections: StaticTextSection[];
 };
 
-const StaticTextPage = ({ title, description, sections }: StaticTextPageProps) => (
+const StaticTextPage = ({ title, description, meta, sections }: StaticTextPageProps) => (
   <div className="min-h-screen bg-background text-foreground">
     <Navbar />
 
@@ -29,9 +31,18 @@ const StaticTextPage = ({ title, description, sections }: StaticTextPageProps) =
               <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
                 {title}
               </h1>
-              <p className="mt-5 text-base leading-7 text-muted-foreground md:text-lg">
-                {description}
-              </p>
+              <div className="mt-5 space-y-3 text-base leading-7 text-muted-foreground md:text-lg">
+                {(Array.isArray(description) ? description : [description]).map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+              {meta?.length ? (
+                <div className="mt-6 space-y-1 text-sm leading-6 text-muted-foreground/90">
+                  {meta.map((line) => (
+                    <p key={line}>{line}</p>
+                  ))}
+                </div>
+              ) : null}
             </div>
 
             <div className="mt-12 space-y-10">
@@ -41,9 +52,16 @@ const StaticTextPage = ({ title, description, sections }: StaticTextPageProps) =
                     {section.heading}
                   </h2>
                   <div className="space-y-4 text-sm leading-7 text-muted-foreground md:text-base">
-                    {section.body.map((paragraph) => (
+                    {section.body?.map((paragraph) => (
                       <p key={paragraph}>{paragraph}</p>
                     ))}
+                    {section.list?.length ? (
+                      <ul className="list-disc space-y-2 pl-5 marker:text-foreground/70">
+                        {section.list.map((item) => (
+                          <li key={item}>{item}</li>
+                        ))}
+                      </ul>
+                    ) : null}
                   </div>
                 </section>
               ))}
