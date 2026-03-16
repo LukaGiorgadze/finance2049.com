@@ -2,7 +2,7 @@ import type { RouteObject } from "react-router-dom";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import PrivacyPolicy from "./pages/PrivacyPolicy.tsx";
-import TermsAndConditions from "./pages/TermsAndConditions.tsx";
+import TermsAndUse from "./pages/TermsAndUse.tsx";
 
 export const routes: RouteObject[] = [
   {
@@ -10,8 +10,8 @@ export const routes: RouteObject[] = [
     element: <Index />,
   },
   {
-    path: "/terms-and-conditions",
-    element: <TermsAndConditions />,
+    path: "/terms-and-use",
+    element: <TermsAndUse />,
   },
   {
     path: "/privacy-policy",
@@ -23,4 +23,4 @@ export const routes: RouteObject[] = [
   },
 ];
 
-export const prerenderRoutes = ["/", "/terms-and-conditions", "/privacy-policy", "/404"] as const;
+export const prerenderRoutes = ["/", "/terms-and-use", "/privacy-policy", "/404"] as const;

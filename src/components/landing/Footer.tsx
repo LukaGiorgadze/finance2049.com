@@ -28,7 +28,7 @@ const communityLinks = [
 ];
 
 const infoLinks = [
-  { label: "Terms of Use", href: "/terms-and-conditions" },
+  { label: "Terms of Use", href: "/terms-and-use" },
   { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
@@ -188,7 +188,7 @@ const Footer = () => {
               <Link to="/privacy-policy" className="transition-colors hover:text-white/70">
                 Privacy
               </Link>
-              <Link to="/terms-and-conditions" className="transition-colors hover:text-white/70">
+              <Link to="/terms-and-use" className="transition-colors hover:text-white/70">
                 Terms of Use
               </Link>
             </div>
