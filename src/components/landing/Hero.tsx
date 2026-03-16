@@ -292,7 +292,7 @@ const Hero = () => {
                   ))}
                 </div>
                 <p className="text-sm font-medium text-foreground">
-                  Loved by <span className="text-gradient-indigo dark:text-primary">500+</span>{" "}
+                  Loved by <span className="text-gradient-indigo dark:text-primary">100+</span>{" "}
                   users
                 </p>
               </div>
