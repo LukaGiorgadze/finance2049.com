@@ -1,6 +1,6 @@
-import appStore from "@/assets/appstore.svg";
-import logo from "@/assets/logo-white.png";
-import playStore from "@/assets/playstore.svg";
+import appStore from "/appstore.svg";
+import logo from "/logo-white.png";
+import playStore from "/playstore.svg";
 
 const navLinks = [
   { label: "Why", href: "#why" },

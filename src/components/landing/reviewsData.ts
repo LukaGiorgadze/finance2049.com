@@ -1,9 +1,9 @@
-import mariamAvatar from "@/assets/mariam.webp";
-import nikaAvatar from "@/assets/nika.webp";
-import temurAvatar from "@/assets/temur.webp";
-import apolonAvatar from "@/assets/apolon.webp";
-import nataliaAvatar from "@/assets/natalia.webp";
-import sabaAvatar from "@/assets/saba.webp";
+import mariamAvatar from "/mariam.webp";
+import nikaAvatar from "/nika.webp";
+import temurAvatar from "/temur.webp";
+import apolonAvatar from "/apolon.webp";
+import nataliaAvatar from "/natalia.webp";
+import sabaAvatar from "/saba.webp";
 
 export const reviews = [
   {

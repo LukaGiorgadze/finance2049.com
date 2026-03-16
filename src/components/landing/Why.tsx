@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Check, LayoutDashboard, Lock, DollarSign } from "lucide-react";
-import logo from "@/assets/logo.png";
+import logo from "/logo.png";
 
 const problems = [
   {

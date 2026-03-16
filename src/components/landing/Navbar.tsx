@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "@/components/ThemeProvider";
 import { cn } from "@/lib/utils";
-import logoWhite from "@/assets/logo-white.png";
+import logoWhite from "/logo-white.png";
 
 const navLinks = [
   { label: "Why", id: "why", href: "#why" },

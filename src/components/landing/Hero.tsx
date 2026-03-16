@@ -12,22 +12,22 @@ import {
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useTheme } from "@/components/ThemeProvider";
-import appStore from "@/assets/appstore.svg";
-import playStore from "@/assets/playstore.svg";
+import appStore from "/appstore.svg";
+import playStore from "/playstore.svg";
 
-import appHome from "@/assets/app_home.png";
-import appPortfolio from "@/assets/app_portfolio.png";
-import appAnalytics from "@/assets/app_analytics.png";
-import appAnalytics2 from "@/assets/app_analytics2.png";
-import appTicker from "@/assets/app_ticker.png";
-import appNews from "@/assets/app_news.png";
+import appHome from "/app_home.png";
+import appPortfolio from "/app_portfolio.png";
+import appAnalytics from "/app_analytics.png";
+import appAnalytics2 from "/app_analytics2.png";
+import appTicker from "/app_ticker.png";
+import appNews from "/app_news.png";
 
-import appHomeDark from "@/assets/app_home_dark.png";
-import appPortfolioDark from "@/assets/app_portfolio_dark.png";
-import appAnalyticsDark from "@/assets/app_analytics_dark.png";
-import appAnalytics2Dark from "@/assets/app_analytics2_dark.png";
-import appTickerDark from "@/assets/app_ticker_dark.png";
-import appNewsDark from "@/assets/app_news_dark.png";
+import appHomeDark from "/app_home_dark.png";
+import appPortfolioDark from "/app_portfolio_dark.png";
+import appAnalyticsDark from "/app_analytics_dark.png";
+import appAnalytics2Dark from "/app_analytics2_dark.png";
+import appTickerDark from "/app_ticker_dark.png";
+import appNewsDark from "/app_news_dark.png";
 import { reviews } from "./reviewsData";
 import {
   buildSoftwareApplicationSchema,
