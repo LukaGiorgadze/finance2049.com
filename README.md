@@ -1,73 +1,43 @@
-# Welcome to your Lovable project
+# Finance 2049
 
-## Project info
+<img src="src/assets/app_home.png" width="300" />
+<img src="src/assets/app_home_dark.png" width="300" />
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+Simple, open-source portfolio tracking app for long-term investors.
 
-There are several ways of editing your application.
+Finance 2049 helps you clearly understand how much you invested, how your portfolio performs over time, and what you actually earned — without trading noise, subscriptions, or complex tools.
 
-**Use Lovable**
+## Why Finance 2049
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Most finance apps are built as full investing platforms with busy interfaces and unnecessary features for long-term investors.  
+Others are simple but too limited and do not provide essential portfolio analytics.
 
-Changes made via Lovable will be committed automatically to this repo.
+Finance 2049 is built in the middle — calm, simple, but complete.
 
-**Use your preferred IDE**
+## Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Portfolio value and total return tracking  
+- Cost basis and invested capital visibility  
+- Realized and unrealized gains separation  
+- Transaction and lot history  
+- Performance analytics  
+- Import transactions from `.xlsx`, `.json`, `.pdf`, images and more  
+- Export full portfolio data anytime  
+- Local-first storage (your data stays on your device)  
+- Fully open-source and transparent  
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Not a trading app
 
-Follow these steps:
+Finance 2049 does not support buying or selling assets.  
+It is designed purely for portfolio tracking and performance understanding.
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Data & Privacy
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+All portfolio data is stored locally on your device.  
+No subscriptions. No hidden tracking. Full control.
 
-# Step 3: Install the necessary dependencies.
-npm i
+## Status
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Early stage project. Feedback and contributions are welcome.
