@@ -76,8 +76,8 @@ const Navbar = () => {
           backdropFilter: "blur(24px) saturate(165%)",
         }}
       >
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        <a
+          href="/"
           className="relative z-10 inline-flex items-center gap-3 rounded-full outline-none transition-opacity duration-200 hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary/30 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           aria-label="Go to top"
         >
@@ -92,7 +92,7 @@ const Navbar = () => {
               Simple portfolio tracking
             </span>
           </span>
-        </button>
+        </a>
 
         <div className="relative z-10 hidden items-center gap-2 md:flex">
           {navLinks.map((link) => (

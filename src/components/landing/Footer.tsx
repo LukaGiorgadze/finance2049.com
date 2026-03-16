@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import appStore from "/appstore.svg";
 import logo from "/logo-white.png";
 import playStore from "/playstore.svg";
@@ -27,8 +28,8 @@ const communityLinks = [
 ];
 
 const infoLinks = [
-  { label: "Terms & Conditions", href: "#" },
-  { label: "Privacy Policy", href: "#" },
+  { label: "Terms & Conditions", href: "/terms-and-conditions" },
+  { label: "Privacy Policy", href: "/privacy-policy" },
 ];
 
 const socialLinks = [
@@ -129,12 +130,12 @@ const Footer = () => {
               <ul className="mt-6 space-y-4">
                 {infoLinks.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
+                    <Link
+                      to={link.href}
                       className="cursor-pointer text-base text-white/60 transition-all duration-200 hover:text-white hover:opacity-80"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
                 <li>
@@ -173,12 +174,12 @@ const Footer = () => {
           <div className="mt-16 flex flex-col gap-4 border-t border-white/10 pt-8 text-sm text-white/45 md:flex-row md:items-center md:justify-between">
             <p>© 2026. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="#" className="transition-colors hover:text-white/70">
+              <Link to="/privacy-policy" className="transition-colors hover:text-white/70">
                 Privacy
-              </a>
-              <a href="#" className="transition-colors hover:text-white/70">
+              </Link>
+              <Link to="/terms-and-conditions" className="transition-colors hover:text-white/70">
                 Terms
-              </a>
+              </Link>
             </div>
           </div>
         </div>
