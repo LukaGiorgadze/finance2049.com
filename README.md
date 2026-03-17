@@ -5,7 +5,8 @@
 </p>
 
 <p align="center">
-  <img src="public/app_home.png" alt="Finance 2049 home screen" width="340" />
+  <img src="public/app_home.png" alt="Finance 2049 home screen" width="45%" />
+  <img src="public/app_home_dark.png" alt="Finance 2049 home screen dark mode" width="45%" />
 </p>
 
 <details>
@@ -13,17 +14,23 @@
   <br />
 
   <p align="center">
-    <img src="public/app_home_dark.png" alt="Finance 2049 home screen dark mode" width="45%" />
+    <img src="public/app_ticker.png" alt="Finance 2049 NVDA ticker screen dark mode" width="45%" />
+    <img src="public/app_ticker_dark.png" alt="Finance 2049 NVDA ticker screen dark mode" width="45%" />
+  </p>
+
+  <p align="center">
     <img src="public/app_portfolio.png" alt="Finance 2049 portfolio screen light mode" width="45%" />
-  </p>
-
-  <p align="center">
     <img src="public/app_portfolio_dark.png" alt="Finance 2049 portfolio screen dark mode" width="45%" />
-    <img src="public/app_analytics.png" alt="Finance 2049 analytics screen light mode" width="45%" />
   </p>
 
   <p align="center">
+    <img src="public/app_analytics.png" alt="Finance 2049 analytics screen light mode" width="45%" />
     <img src="public/app_analytics_dark.png" alt="Finance 2049 analytics screen dark mode" width="45%" />
+  </p>
+
+  <p align="center">
+    <img src="public/app_news.png" alt="Finance 2049 news screen light mode" width="45%" />
+    <img src="public/app_news_dark.png" alt="Finance 2049 news screen dark mode" width="45%" />
   </p>
 </details>
 
