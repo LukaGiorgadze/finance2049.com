@@ -204,7 +204,7 @@ const Hero = () => {
         >
           <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-xs text-muted-foreground shadow-[0_10px_30px_-20px_rgba(0,0,0,0.25)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.05] dark:text-white/70">
             <ShieldCheckIcon size={14} className="text-primary" strokeWidth={2} />
-            <span>Open-source. Local-first. Secure.</span>
+            <span>Open-source. 100% FREE.</span>
           </div>
 
           <div className="mt-4 space-y-5">
