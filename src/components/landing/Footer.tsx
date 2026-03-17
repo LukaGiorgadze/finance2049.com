@@ -67,7 +67,8 @@ const Footer = () => {
 
               <div className="flex flex-row gap-4">
                 <a
-                  href="https://apps.apple.com/app/finance2049/id"
+                  href="#"
+                  onClick={() => alert("Stay tuned for the app release!")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
@@ -79,7 +80,8 @@ const Footer = () => {
                   />
                 </a>
                 <a
-                  href="https://play.google.com/store/apps/details?id="
+                  href="#"
+                  onClick={() => alert("Stay tuned for the app release!")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"

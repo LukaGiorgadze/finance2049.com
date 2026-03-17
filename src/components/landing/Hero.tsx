@@ -228,7 +228,8 @@ const Hero = () => {
 
           <div className="mb-6 mt-10 flex flex-row justify-center gap-3 sm:mb-10 sm:mt-14 sm:gap-4 sm:justify-start lg:mb-12 lg:mt-20">
             <a
-              href="https://apps.apple.com/app/finance2049/id"
+              href="#"
+              onClick={() => alert("Stay tuned for the app release!")}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Download Modern Money on the App Store"
@@ -243,7 +244,8 @@ const Hero = () => {
               />
             </a>
             <a
-              href="https://play.google.com/store/apps/details?id="
+              href="#"
+              onClick={() => alert("Stay tuned for the app release!")}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Get Modern Money on Google Play"
