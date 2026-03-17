@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "@/components/theme-context";
 import { cn } from "@/lib/utils";
 import logoWhite from "/logo-white.png";
 

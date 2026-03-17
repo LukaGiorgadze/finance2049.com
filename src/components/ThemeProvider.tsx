@@ -1,27 +1,17 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-
-type Theme = "light" | "dark";
-
-const ThemeContext = createContext<{ theme: Theme; toggle: () => void }>({
-  theme: "dark",
-  toggle: () => {},
-});
-
-export const useTheme = () => useContext(ThemeContext);
+import { useEffect, useState, ReactNode } from "react";
+import { ThemeContext, type Theme } from "@/components/theme-context";
 
 const isTheme = (value: string | null): value is Theme =>
   value === "light" || value === "dark";
 
+const getInitialTheme = (): Theme => {
+  if (typeof window === "undefined") return "dark";
+  const saved = localStorage.getItem("theme");
+  return isTheme(saved) ? saved : "dark";
+};
+
 export const ThemeProvider = ({ children }: { children: ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>("dark");
-
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-
-    if (isTheme(savedTheme)) {
-      setTheme(savedTheme);
-    }
-  }, []);
+  const [theme, setTheme] = useState<Theme>(getInitialTheme);
 
   useEffect(() => {
     const root = document.documentElement;

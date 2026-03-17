@@ -11,7 +11,7 @@ import {
   Wallet,
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { useTheme } from "@/components/ThemeProvider";
+import { useTheme } from "@/components/theme-context";
 import appStore from "/appstore.svg";
 import playStore from "/playstore.svg";
 
