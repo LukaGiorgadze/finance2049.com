@@ -69,7 +69,6 @@ const Footer = () => {
                 <a
                   href="#"
                   onClick={() => alert("Stay tuned for the app release!")}
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
                 >
@@ -82,7 +81,6 @@ const Footer = () => {
                 <a
                   href="#"
                   onClick={() => alert("Stay tuned for the app release!")}
-                  target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
                 >

@@ -230,7 +230,6 @@ const Hero = () => {
             <a
               href="#"
               onClick={() => alert("Stay tuned for the app release!")}
-              target="_blank"
               rel="noopener noreferrer"
               aria-label="Download Modern Money on the App Store"
               className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
@@ -246,7 +245,6 @@ const Hero = () => {
             <a
               href="#"
               onClick={() => alert("Stay tuned for the app release!")}
-              target="_blank"
               rel="noopener noreferrer"
               aria-label="Get Modern Money on Google Play"
               className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
