@@ -13,29 +13,26 @@ const sections = [
     body: [
       "Finance 2049 is built with a local-first approach.",
       "Portfolio data such as transactions, holdings, and analytics is stored only on your device.",
-      "We may collect limited information including:",
+      "We do not directly collect personal information, authentication data, onboarding details, device information, or IP addresses.",
+      "Some limited technical information may be collected by third-party services we use:",
     ],
     list: [
-      "Anonymous authentication identifier (via Supabase anonymous login)",
-      "Basic onboarding information",
-      "Device information (device type, OS version)",
       "App usage analytics (via Google Analytics / Firebase)",
-      "Crash logs and performance diagnostics",
-      "IP address when requesting market data from third-party providers (e.g. Massive.com)",
+      "Crash logs and performance diagnostics (via Sentry)",
+      "Market data request information handled by third-party providers such as Massive.com",
     ],
   },
   {
     heading: "3. How We Use Information",
     body: [
-      "We use collected data to:",
+      "Finance 2049 is designed so that your portfolio data remains on your device.",
+      "When third-party services collect technical information, it is used to operate and improve those services within the app.",
       "We do not sell personal data and we do not use your data for advertising profiling.",
     ],
     list: [
-      "Provide and maintain the app",
-      "Improve performance and stability",
-      "Fix bugs and crashes",
-      "Understand general feature usage",
-      "Retrieve market prices and financial data",
+      "Measure general app usage through Google Analytics / Firebase",
+      "Monitor crashes and performance through Sentry",
+      "Retrieve market prices and financial data through providers such as Massive.com",
     ],
   },
   {
@@ -49,9 +46,8 @@ const sections = [
   {
     heading: "5. Anonymous Accounts",
     body: [
-      "The app currently uses anonymous authentication to enable basic functionality.",
-      "In the future, we may introduce optional user accounts with email or other identifiers.",
-      "If this happens, we will update this Privacy Policy and inform users.",
+      "Finance 2049 does not currently require user accounts or directly collect authentication data.",
+      "If account-based features are introduced in the future, we will update this Privacy Policy before those changes take effect.",
     ],
   },
   {
@@ -61,7 +57,8 @@ const sections = [
       "We do not sell or rent your personal information.",
     ],
     list: [
-      "Analytics and crash reporting providers (Google Analytics, Firebase)",
+      "Analytics providers (Google Analytics, Firebase)",
+      "Crash reporting provider (Sentry)",
       "Market data providers (such as Massive.com)",
       "Legal authorities when required by law",
     ],
@@ -70,7 +67,7 @@ const sections = [
     heading: "7. Data Retention",
     body: [
       "Since portfolio data is stored locally, we do not retain it on our servers.",
-      "Technical logs and analytics data may be stored for a limited time to improve the product.",
+      "Any technical logs, analytics data, or diagnostics collected by third-party providers are retained according to their own policies.",
     ],
   },
   {
@@ -91,7 +88,7 @@ const sections = [
   {
     heading: "10. Third-Party Services",
     body: [
-      "Finance 2049 relies on third-party services for analytics, authentication, and market data.",
+      "Finance 2049 relies on third-party services for analytics, crash reporting, and market data.",
       "These providers have their own privacy policies.",
     ],
   },
@@ -111,7 +108,7 @@ const sections = [
 const PrivacyPolicy = () => (
   <StaticTextPage
     title="Privacy Policy"
-    description="This Privacy Policy explains how Finance 2049 handles limited technical information while keeping portfolio data stored locally on your device."
+    description="This Privacy Policy explains how Finance 2049 keeps portfolio data stored locally on your device while relying on limited third-party analytics, crash reporting, and market data services."
     meta={["Finance 2049", "finance2049.com", "Effective date: 11 April, 2026"]}
     sections={sections}
   />
