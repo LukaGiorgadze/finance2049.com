@@ -3,6 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (() => {
+        const storageKey = "theme";
+        const savedTheme = window.localStorage.getItem(storageKey);
+        const isSavedTheme = savedTheme === "light" || savedTheme === "dark";
+        const prefersDark = typeof window.matchMedia === "function"
+          ? window.matchMedia("(prefers-color-scheme: dark)").matches
+          : true;
+        const theme = isSavedTheme ? savedTheme : (prefersDark ? "dark" : "light");
+        const themeColor = theme === "dark" ? "#121616" : "#ffffff";
+        const root = document.documentElement;
+
+        root.classList.remove("light", "dark");
+        root.classList.add(theme);
+        root.style.colorScheme = theme;
+        document
+          .querySelector('meta[name="theme-color"]:not([media])')
+          ?.setAttribute("content", themeColor);
+      })();
+    </script>
+    <style>
+      html {
+        background: #121616;
+        color-scheme: dark;
+      }
+
+      html.light {
+        background: #ffffff;
+        color-scheme: light;
+      }
+
+      body {
+        background: transparent;
+      }
+    </style>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
@@ -23,7 +58,10 @@
     />
     <meta name="author" content="Finance 2049" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0b0b0f" />
+    <meta name="theme-color" content="#121616" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#121616" />
+    <meta name="color-scheme" content="light dark" />
 
     <meta property="og:title" content="Finance 2049 | Portfolio Tracking for Long-Term Investors" />
     <meta
