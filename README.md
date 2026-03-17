@@ -1,7 +1,31 @@
 # Finance 2049
 
-<img src="src/assets/app_home.png" width="300" />
-<img src="src/assets/app_home_dark.png" width="300" />
+<p align="center">
+  <a href="https://github.com/LukaGiorgadze/finance2049">🗃️ Finance 2049 App Repository</a>
+</p>
+
+<p align="center">
+  <img src="public/app_home.png" alt="Finance 2049 home screen" width="340" />
+</p>
+
+<details>
+  <summary><strong>Open more screenshots</strong></summary>
+  <br />
+
+  <p align="center">
+    <img src="public/app_home_dark.png" alt="Finance 2049 home screen dark mode" width="45%" />
+    <img src="public/app_portfolio.png" alt="Finance 2049 portfolio screen light mode" width="45%" />
+  </p>
+
+  <p align="center">
+    <img src="public/app_portfolio_dark.png" alt="Finance 2049 portfolio screen dark mode" width="45%" />
+    <img src="public/app_analytics.png" alt="Finance 2049 analytics screen light mode" width="45%" />
+  </p>
+
+  <p align="center">
+    <img src="public/app_analytics_dark.png" alt="Finance 2049 analytics screen dark mode" width="45%" />
+  </p>
+</details>
 
 ---
 
