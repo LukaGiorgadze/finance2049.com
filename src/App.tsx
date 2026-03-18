@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useLocation, useRoutes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -9,6 +9,20 @@ import { routes } from "./routes.tsx";
 import "./index.css";
 
 const AppRoutes = () => useRoutes(routes);
+
+const GA_MEASUREMENT_ID = "G-G6G2YVT1GH";
+
+const GoogleAnalytics = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (typeof window.gtag === "function") {
+      window.gtag("config", GA_MEASUREMENT_ID, { page_path: pathname });
+    }
+  }, [pathname]);
+
+  return null;
+};
 
 const ScrollManager = () => {
   const { pathname, hash } = useLocation();
@@ -44,20 +58,22 @@ const ScrollManager = () => {
   return null;
 };
 
+const emptySubscribe = () => () => {};
+
+const useIsClient = () =>
+  useSyncExternalStore(emptySubscribe, () => true, () => false);
+
 const App = () => {
   const [queryClient] = useState(() => new QueryClient());
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  const isClient = useIsClient();
 
   return (
     <ThemeProvider>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-          {isMounted ? <Toaster /> : null}
-          {isMounted ? <Sonner /> : null}
+          {isClient ? <Toaster /> : null}
+          {isClient ? <Sonner /> : null}
+          <GoogleAnalytics />
           <ScrollManager />
           <AppRoutes />
         </TooltipProvider>
