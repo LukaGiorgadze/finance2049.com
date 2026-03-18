@@ -12,6 +12,36 @@ const { prerenderRoutes, render } = await import(
   url.pathToFileURL(toAbsolute("dist/server/entry-server.js")).href
 );
 
+const routeMeta = {
+  "/": {
+    title: "Finance 2049 | Portfolio Tracking for Long-Term Investors",
+    description:
+      "Finance 2049 is an open-source portfolio tracking app for long-term investors. Track cost basis, gains, allocation, and performance with a clean, local-first experience.",
+    canonicalPath: "/",
+    ogType: "website",
+  },
+  "/terms-and-use": {
+    title: "Terms of Use | Finance 2049",
+    description:
+      "These Terms of Use govern your use of Finance 2049, including the mobile application, website, and related services.",
+    canonicalPath: "/terms-and-use",
+    ogType: "article",
+  },
+  "/privacy-policy": {
+    title: "Privacy Policy | Finance 2049",
+    description:
+      "This Privacy Policy explains how Finance 2049 keeps portfolio data stored locally on your device while relying on limited third-party analytics, crash reporting, and market data services.",
+    canonicalPath: "/privacy-policy",
+    ogType: "article",
+  },
+  "/404": {
+    title: "Page Not Found | Finance 2049",
+    description: "The requested Finance 2049 page could not be found.",
+    canonicalPath: "/404",
+    ogType: "website",
+  },
+};
+
 const extractPreloadLinks = (html) => {
   const match = html.match(/^((?:<link\b[^>]*\/>)+)(.*)$/s);
 
@@ -37,12 +67,68 @@ const getOutputPath = (route) => {
   return toAbsolute(`dist/static${route}/index.html`);
 };
 
+const replaceOrInsertTag = (html, pattern, replacement, anchor) => {
+  if (pattern.test(html)) {
+    return html.replace(pattern, replacement);
+  }
+
+  return html.replace(anchor, `${replacement}\n    ${anchor}`);
+};
+
+const applyRouteHead = (html, route) => {
+  const meta = routeMeta[route] ?? routeMeta["/404"];
+  const canonicalUrl = `https://finance2049.com${meta.canonicalPath}`;
+
+  let updatedHtml = html
+    .replace(/<title>.*?<\/title>/s, `<title>${meta.title}</title>`)
+    .replace(
+      /<meta\s+name="description"\s+content=".*?"\s*\/>/,
+      `<meta name="description" content="${meta.description}" />`
+    )
+    .replace(
+      /<meta\s+property="og:title"\s+content=".*?"\s*\/>/,
+      `<meta property="og:title" content="${meta.title}" />`
+    )
+    .replace(
+      /<meta\s+property="og:description"\s+content=".*?"\s*\/>/,
+      `<meta property="og:description" content="${meta.description}" />`
+    )
+    .replace(
+      /<meta\s+property="og:type"\s+content=".*?"\s*\/>/,
+      `<meta property="og:type" content="${meta.ogType ?? "website"}" />`
+    )
+    .replace(
+      /<meta\s+property="og:url"\s+content=".*?"\s*\/>/,
+      `<meta property="og:url" content="${canonicalUrl}" />`
+    )
+    .replace(
+      /<meta\s+name="twitter:title"\s+content=".*?"\s*\/>/,
+      `<meta name="twitter:title" content="${meta.title}" />`
+    )
+    .replace(
+      /<meta\s+name="twitter:description"\s+content=".*?"\s*\/>/,
+      `<meta name="twitter:description" content="${meta.description}" />`
+    );
+
+  updatedHtml = replaceOrInsertTag(
+    updatedHtml,
+    /<link\s+rel="canonical"\s+href=".*?"\s*\/>/,
+    `<link rel="canonical" href="${canonicalUrl}" />`,
+    `<link rel="preconnect" href="https://fonts.googleapis.com" />`
+  );
+
+  return updatedHtml;
+};
+
 for (const route of prerenderRoutes) {
   const renderedHtml = render(route);
   const { preloadLinks, appHtml } = extractPreloadLinks(renderedHtml);
-  const html = template
+  const html = applyRouteHead(
+    template
     .replace("<!--preload-links-->", preloadLinks)
-    .replace("<!--app-html-->", appHtml);
+    .replace("<!--app-html-->", appHtml),
+    route
+  );
   const outputPath = getOutputPath(route);
 
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
