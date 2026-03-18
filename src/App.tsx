@@ -1,4 +1,4 @@
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useEffect, useLayoutEffect, useState, useSyncExternalStore } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useLocation, useRoutes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
