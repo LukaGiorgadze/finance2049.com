@@ -258,10 +258,8 @@ const Hero = () => {
 
           <div className="mb-6 mt-10 flex flex-row justify-center gap-3 sm:mb-10 sm:mt-14 sm:gap-4 sm:justify-start lg:mb-12 lg:mt-20">
             <a
-              href="#"
-              onClick={() => alert("Stay tuned for the app release!")}
-              rel="noopener noreferrer"
-              aria-label="Download Modern Money on the App Store"
+              href="https://apps.apple.com/us/app/finance-2049-portfolio-tracker/id6759679178"
+              aria-label="Download Portfolio Tracker on the App Store"
               className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
             >
               <img
@@ -273,10 +271,8 @@ const Hero = () => {
               />
             </a>
             <a
-              href="#"
-              onClick={() => alert("Stay tuned for the app release!")}
-              rel="noopener noreferrer"
-              aria-label="Get Modern Money on Google Play"
+              href="https://play.google.com/store/apps/details?id=com.lomsa.finance2049"
+              aria-label="Get Portfolio Tracker on Google Play"
               className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
             >
               <img
