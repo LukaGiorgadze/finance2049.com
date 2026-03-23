@@ -28,48 +28,78 @@ import appAnalyticsDark from "/app_analytics_dark.png";
 import appAnalytics2Dark from "/app_analytics2_dark.png";
 import appTickerDark from "/app_ticker_dark.png";
 import appNewsDark from "/app_news_dark.png";
+
+import appHome2x from "/app_home@2x.png";
+import appPortfolio2x from "/app_portfolio@2x.png";
+import appAnalytics2x from "/app_analytics@2x.png";
+import appAnalytics2_2x from "/app_analytics2@2x.png";
+import appTicker2x from "/app_ticker@2x.png";
+import appNews2x from "/app_news@2x.png";
+
+import appHomeDark2x from "/app_home_dark@2x.png";
+import appPortfolioDark2x from "/app_portfolio_dark@2x.png";
+import appAnalyticsDark2x from "/app_analytics_dark@2x.png";
+import appAnalytics2Dark2x from "/app_analytics2_dark@2x.png";
+import appTickerDark2x from "/app_ticker_dark@2x.png";
+import appNewsDark2x from "/app_news_dark@2x.png";
 import { reviews } from "./reviewsData";
 import {
   buildSoftwareApplicationSchema,
   softwareApplicationMeta,
 } from "./structuredData";
 
+function retinaSrcSet(src1x: string, src2x: string) {
+  return `${src1x} 1x, ${src2x} 2x`;
+}
+
 const heroScreens = [
   {
     title: "Home",
     description: "Markets, watchlists, and your portfolio snapshot in one fast home screen.",
     image: appHome,
+    image2x: appHome2x,
     darkImage: appHomeDark,
+    darkImage2x: appHomeDark2x,
   },
   {
     title: "Portfolio",
     description: "Track allocation, cost basis, and per-position performance without spreadsheet cleanup.",
     image: appPortfolio,
+    image2x: appPortfolio2x,
     darkImage: appPortfolioDark,
+    darkImage2x: appPortfolioDark2x,
   },
   {
     title: "Analytics",
     description: "Separate realized and unrealized returns so long-term performance stays honest.",
     image: appAnalytics,
+    image2x: appAnalytics2x,
     darkImage: appAnalyticsDark,
+    darkImage2x: appAnalyticsDark2x,
   },
   {
     title: "Winners & losers",
     description: "See which holdings are driving returns, and how much each position contributed.",
     image: appAnalytics2,
+    image2x: appAnalytics2_2x,
     darkImage: appAnalytics2Dark,
+    darkImage2x: appAnalytics2Dark2x,
   },
   {
     title: "Position detail",
     description: "Open any holding for charts, lots, cost basis, and historical return context.",
     image: appTicker,
+    image2x: appTicker2x,
     darkImage: appTickerDark,
+    darkImage2x: appTickerDark2x,
   },
   {
     title: "News",
     description: "Stay on top of headlines linked to tickers you actually own and follow.",
     image: appNews,
+    image2x: appNews2x,
     darkImage: appNewsDark,
+    darkImage2x: appNewsDark2x,
   },
 ] as const;
 
@@ -199,7 +229,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.5 }}
           className="max-w-2xl lg:self-start"
         >
           <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-xs text-muted-foreground shadow-[0_10px_30px_-20px_rgba(0,0,0,0.25)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.05] dark:text-white/70">
@@ -262,7 +292,7 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
+            transition={{ duration: 0.5, delay: 0.25 }}
             className="flex flex-col items-center gap-3 sm:items-start"
           >
             <div
@@ -431,6 +461,10 @@ const Hero = () => {
                       <motion.img
                         key={`${screen.title}-${isDark ? "dark" : "light"}`}
                         src={isDark ? screen.darkImage : screen.image}
+                        srcSet={retinaSrcSet(
+                          isDark ? screen.darkImage : screen.image,
+                          isDark ? screen.darkImage2x : screen.image2x,
+                        )}
                         alt={`${screen.title} screen of the Modern Money app`}
                         title={`${screen.title} screen preview`}
                         itemProp={index === activeScreen ? "screenshot" : undefined}
