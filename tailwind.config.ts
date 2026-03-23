@@ -15,7 +15,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Mulish", "system-ui", "sans-serif"],
+        sans: ["Mulish Variable", "Mulish", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",

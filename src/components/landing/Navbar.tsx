@@ -154,9 +154,11 @@ const Navbar = () => {
             aria-label={`Open ${githubRepo.owner}/${githubRepo.name} on GitHub`}
           >
             <img
-              src={`https://img.shields.io/github/stars/${githubRepo.owner}/${githubRepo.name}`}
+              src={`https://img.shields.io/github/stars/${githubRepo.owner}/${githubRepo.name}?cacheSeconds=3600`}
               alt={`GitHub stars for ${githubRepo.owner}/${githubRepo.name}`}
               className="dark:invert h-6"
+              decoding="async"
+              fetchPriority="low"
             />
           </a>
         </div>

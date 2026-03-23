@@ -226,16 +226,16 @@ const Hero = () => {
       <div className="pointer-events-none absolute -right-32 top-24 h-72 w-[22rem] rounded-full bg-accent/10 blur-3xl dark:bg-accent/15" />
 
       <div className="container relative z-10 mt-10 grid items-center gap-8 sm:mt-12 sm:gap-10 lg:mt-16 lg:min-h-[calc(100vh-8rem)] lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-2xl lg:self-start"
-        >
-          <div className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-xs text-muted-foreground shadow-[0_10px_30px_-20px_rgba(0,0,0,0.25)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.05] dark:text-white/70">
+        <div className="max-w-2xl lg:self-start">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4 }}
+            className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-white/80 px-4 py-2 text-xs text-muted-foreground shadow-[0_10px_30px_-20px_rgba(0,0,0,0.25)] backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.05] dark:text-white/70"
+          >
             <ShieldCheckIcon size={14} className="text-primary" strokeWidth={2} />
             <span>Open-source. 100% FREE.</span>
-          </div>
+          </motion.div>
 
           <div className="mt-4 space-y-5">
             <h1
@@ -347,7 +347,7 @@ const Hero = () => {
               </div>
             </div>
           </motion.div>
-        </motion.div>
+        </div>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

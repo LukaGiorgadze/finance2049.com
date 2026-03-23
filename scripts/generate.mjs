@@ -114,7 +114,7 @@ const applyRouteHead = (html, route) => {
     updatedHtml,
     /<link\s+rel="canonical"\s+href=".*?"\s*\/>/,
     `<link rel="canonical" href="${canonicalUrl}" />`,
-    `<link rel="preconnect" href="https://fonts.googleapis.com" />`
+    `<link rel="manifest" href="/site.webmanifest" />`
   );
 
   return updatedHtml;
