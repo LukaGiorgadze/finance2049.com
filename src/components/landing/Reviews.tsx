@@ -82,7 +82,7 @@ const Reviews = () => {
                 aria-hidden="true"
                 className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/15 to-transparent opacity-80 dark:bg-none dark:bg-white/15"
               />
-              <div className="flex gap-1" aria-label={`${r.rating} out of 5 stars`}>
+              <div className="flex gap-1" role="img" aria-label={`${r.rating} out of 5 stars`}>
                 {Array.from({ length: r.rating }).map((_, j) => (
                   <Star key={j} aria-hidden="true" size={14} className="fill-yellow-400 text-yellow-400" />
                 ))}
