@@ -73,7 +73,7 @@ const FAQ = () => {
                 className="overflow-hidden rounded-2xl border border-border/70 bg-white px-6 shadow-[0_20px_60px_-40px_rgba(15,23,42,0.18)] md:hover:border-primary/20 md:hover:shadow-[0_24px_70px_-36px_rgba(52,199,89,0.2)] dark:border-white/10 dark:bg-white/[0.04] dark:shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] md:dark:hover:border-white/15 md:dark:hover:bg-white/[0.06] md:dark:hover:shadow-[0_24px_70px_-40px_rgba(99,102,241,0.2)]"
               >
                 <AccordionTrigger className="cursor-pointer text-left text-sm font-medium hover:no-underline dark:text-white">
-                  <span itemProp="name">{faq.q}</span>
+                  <h6 itemProp="name">{faq.q}</h6>
                 </AccordionTrigger>
                 <AccordionContent
                   itemScope
