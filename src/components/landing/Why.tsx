@@ -100,9 +100,9 @@ const Why = () => {
                       <h4 className="text-xl font-semibold tracking-tight text-rose-950 dark:text-rose-100">
                         {problem.title}
                       </h4>
-                      <h6 className="mt-2 max-w-xl text-sm leading-7 text-rose-950/75 dark:text-rose-100/70">
+                      <p className="mt-2 max-w-xl text-sm leading-7 text-rose-950/75 dark:text-rose-100/70">
                         {problem.description}
-                      </h6>
+                      </p>
                     </article>
                   </li>
                 );
