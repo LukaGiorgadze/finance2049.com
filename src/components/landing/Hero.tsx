@@ -259,6 +259,7 @@ const Hero = () => {
           <div className="mb-6 mt-10 flex flex-row justify-center gap-3 sm:mb-10 sm:mt-14 sm:gap-4 sm:justify-start lg:mb-12 lg:mt-20">
             <a
               href="https://apps.apple.com/us/app/finance-2049-portfolio-tracker/id6759679178"
+              target="_blank"
               aria-label="Download Portfolio Tracker on the App Store"
               className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
             >
@@ -272,6 +273,7 @@ const Hero = () => {
             </a>
             <a
               href="https://play.google.com/store/apps/details?id=com.lomsa.finance2049"
+              target="_blank"
               aria-label="Get Portfolio Tracker on Google Play"
               className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
             >

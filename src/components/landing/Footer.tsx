@@ -68,6 +68,7 @@ const Footer = () => {
               <div className="flex flex-row gap-4">
                 <a
                   href="https://apps.apple.com/us/app/finance-2049-portfolio-tracker/id6759679178"
+                  target="_blank"
                   aria-label="Download Portfolio Tracker on the App Store"
                   className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
                 >
@@ -79,6 +80,7 @@ const Footer = () => {
                 </a>
                 <a
                   href="https://play.google.com/store/apps/details?id=com.lomsa.finance2049"
+                  target="_blank"
                   aria-label="Get Portfolio Tracker on Google Play"
                   className="inline-flex rounded-xl bg-white transition-all duration-300 ease-in-out"
                 >
